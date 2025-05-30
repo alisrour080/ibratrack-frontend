@@ -14,9 +14,9 @@ const Header: React.FC = () => {
             </a>
         </div>
             <div className="flex-none flex items-center space-x-4">
-                <ul className="menu menu-vertical lg:menu-horizontal">
-                    <li><a><button className="btn rounded-md bg-blue-500 border-none shadow-none">Login</button></a></li>
-                    <li><a><button className="btn rounded-md bg-white text-black shadow-none border-gray-300">Contact</button></a></li>
+                <ul className="menu menu-vertical lg:menu-horizontal space-x-4">
+                    <li><button className="btn rounded-md bg-blue-500 border-none shadow-none">Login</button></li>
+                    <li><button className="btn rounded-md bg-white text-black shadow-none border-gray-300">Contact</button></li>
                 </ul>
                 {/* <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
