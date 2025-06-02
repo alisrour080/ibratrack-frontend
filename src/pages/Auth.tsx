@@ -8,23 +8,28 @@ const  Auth:React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("login");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const { loginUser } = useAuth();
+  const { loginUser,registerUser } = useAuth();
   const navigate = useNavigate();
-
+  const [name, setName] = useState<string>("");
 
   const handleSubmit = async () => {
     if(activeTab === "login") {
       const res = await loginUser(email, password);
-      if(res.success) {
+      if(res && res.success) {
         navigate("/dashboard");
       }
       else {
-        console.error("Login failed:", res.message);
+        console.error("Login failed:", res ? res.message : "Unknown error");
       }
 
     }
     else{
-      console.log("Registering user:", { name, email, password });
+      const res = await registerUser(name, email, password);
+      if (res && res.success) {
+        navigate("/dashboard");
+      } else {
+        console.error("Registration failed:", res ? res.message : "Unknown error");
+      }
     }
   };
 
@@ -50,6 +55,18 @@ const  Auth:React.FC = () => {
 
             {/* Form */}
             <div className="space-y-4">
+
+              {/* Name Input (only for registration) */}
+              <div className="form-control">
+                <input 
+                  type="text"
+                  placeholder="Name"
+                  className={`input w-full bg-gray-200 text-gray-500 ${activeTab === "register" ? "" : "hidden"}`}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                   />
+              </div>
+
               {/* Email Input */}
               <div className="form-control">
                 <input
