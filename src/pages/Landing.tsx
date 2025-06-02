@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../components/Layout/Header";
-import Footer from "../components/Layout/Footer";
 import HeroSection from "../components/Landing/HeroSection";
 import FeaturedSection from "../components/Landing/FeaturedSection";
 
@@ -10,7 +8,6 @@ const Landing:React.FC = () => {
 
     return (
         <div>
-            <Header></Header>
             <div className="flex-1">
                <HeroSection/>
                 <FeaturedSection/>
@@ -24,7 +21,6 @@ const Landing:React.FC = () => {
                 </div>
                 </section>
             </div>
-        <Footer/>
         </div>
     );
 

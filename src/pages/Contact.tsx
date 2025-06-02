@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../components/Layout/Header';
-import Footer from '../components/Layout/Footer';
 import {Mail,Phone,MapPin,Send} from 'lucide-react';
 
 
@@ -15,7 +13,6 @@ const Contact:React.FC = () => {
 
     return (
         <div className='min-h-screen bg-blue-50 flex flex-col'>
-            <Header />
             <div className="flex-1">
                 <div className='container mx-auto px-4 py-8'>
                     <div className="text-center mb-12">
@@ -131,7 +128,6 @@ const Contact:React.FC = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../components/Layout/Header';
 import SearchBar from '../components/Dashboard/SearchBar';
 import { useState } from 'react';
 import type { IRepair } from '../types/IRepair';
@@ -76,7 +75,6 @@ const Dashboard: React.FC = () => {
 
     return (
         <div>
-            <Header/>
             <div className='min-h-screen bg-gray-50 p-6'>
 
                 
